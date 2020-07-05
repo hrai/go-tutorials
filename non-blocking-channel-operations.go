@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-    messages := make(chan string)
-    signals := make(chan bool)
+    messages := make(chan string, 1)
+    signals := make(chan bool, 1)
 
     select {
     case msg := <-messages:
